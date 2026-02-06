@@ -10,6 +10,6 @@
   tasks:
     - name: print data info
       vars:
-      NAME: "Prashu"
+        NAME: "Prashu"
       ansible.builtin.debug:
         msg: "Name is: {{ NAME }},  Course is: {{ COURSE }}, Place is: {{ PLACE }}"
