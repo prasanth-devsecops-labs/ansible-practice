@@ -1,0 +1,10 @@
+- name: Play level variables
+  hosts: local
+  connection: local
+  become: yes
+  tasks:
+    - name: print data info
+      vars:
+        NAME: "Prashu"
+      ansible.builtin.debug:
+        msg: "Name is: {{ NAME }}"
