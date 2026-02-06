@@ -2,11 +2,8 @@
   hosts: local
   connection: local
   become: yes
-  vars:
-    NAME: "Prasnth Reddy"
-    COURSE: "DEVOPS"
-    PLACE: "ONLINE"
-
+  vars_files:
+    - course.yaml
   tasks:
     - name: print data info
       vars:
