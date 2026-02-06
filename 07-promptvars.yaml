@@ -1,0 +1,17 @@
+- name: Play level variables
+  hosts: local
+  connection: local
+  become: yes
+  vars_prompt:
+    - name: username
+      prompt: enter user name
+      private: false
+    
+    - name: password
+      prompt: enter password
+      private: true
+
+  tasks:
+    - name: print info
+      ansible.builtin.debug:
+        msg: " username is : {{ username }}, password is {{ password }}"
