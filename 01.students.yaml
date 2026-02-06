@@ -1,0 +1,13 @@
+- name: "Prasnth Reddy"
+  dob: "1992-04-17"
+  mobile: 9876543210
+  Address:
+  - flat: "10-35/b"
+    street: "pacs bank street"
+    city: "MDK - ASPM"
+    type: "perm"
+  
+  - flat: "19-104"
+    street: "VV Nagar"
+    city: "HYD"
+    type: "current"
