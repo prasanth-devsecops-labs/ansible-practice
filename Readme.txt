@@ -55,3 +55,44 @@ varibales:
     command line based variables
 
 precendence will comes into picture while resolving variables.
+
+
+variable precedence from top to bottom
+1. command line args
+2. task level
+3. file level
+4. prompt level
+5. play/global level
+6. inventory level
+
+
+conditions: 
+    when: condition(true/false)
+
+loops: {{ item }}
+    loop:
+        - item 1
+        - item 2
+
+loop: {{ item.key, item.value }}
+    - { key : value, key : value }
+    - { key : value, key : value }
+
+register variable to store previous run command outcome
+set_fact to set custom variable
+
+gather facts using : ansible_facts
+
+filters: to VAR_NAME | FILTER  example: to_nice_json, dict2items, items2dict etc..
+
+Ansible builting command vs shell
+command:  more secure, less features to access like | and > will not works.
+shell: less secure, all shell environment accessible and all features works here like | and >
+
+list [ ]
+map { }
+string ""
+bool true/false
+
+
+
