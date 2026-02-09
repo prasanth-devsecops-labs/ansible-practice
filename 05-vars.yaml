@@ -1,6 +1,6 @@
 - name: Play level variables
-  hosts: local
-  connection: local
+  hosts: localhost
+  # connection: local
   become: yes
   vars:
     NAME: "Prasnth Reddy"
