@@ -14,7 +14,7 @@
         msg: "{{ date_output.stdout }}"
 
     - name: shell example
-      ansible.builtin.shell: uptime # less secure all shell environment cab be accessible 
+      ansible.builtin.shell: uptime # less secure all shell environment can be accessible 
       register: uptime_test
       changed_when: false
     

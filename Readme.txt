@@ -85,7 +85,7 @@ gather facts using : ansible_facts
 
 filters: to VAR_NAME | FILTER  example: to_nice_json, dict2items, items2dict etc..
 
-Ansible builting command vs shell
+Ansible builtin command vs shell
 command:  more secure, less features to access like | and > will not works.
 shell: less secure, all shell environment accessible and all features works here like | and >
 
