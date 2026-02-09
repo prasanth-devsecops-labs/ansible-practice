@@ -12,6 +12,6 @@
       ansible.builtin.debug:
         msg: "Course is: {{ COURSE }}, Place is: {{ PLACE }}"
 
-    - name: print data info
-      ansible.builtin.debug:
-        msg: "Name is: {{ NAME }}"
+    # - name: print data info
+    #   ansible.builtin.debug:
+    #     msg: "Name is: {{ NAME }}"
