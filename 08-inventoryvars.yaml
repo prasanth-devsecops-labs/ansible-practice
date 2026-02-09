@@ -1,6 +1,6 @@
 - name: Play level variables
   hosts: localhost
-  # connection: local
+  connection: local
   become: yes
 
   vars:
