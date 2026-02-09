@@ -1,6 +1,6 @@
 - name: Play level variables
   hosts: local
-  connection: local
+  # connection: local
   become: yes
   tasks:
     - name: print data info
