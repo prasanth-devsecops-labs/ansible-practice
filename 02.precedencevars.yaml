@@ -1,22 +1,22 @@
 - name: precedence checks
   hosts: local
   connection: local
-  become: yes
-  vars:
-    NAME: "I am from PLAY level"
-  vars_files:
-    - custom.yaml
-  vars_prompt:
-    - name: NAME
-      prompt: "Please enter user name"
-      private: false
+  # become: yes
+  # vars:
+  #   NAME: "I am from PLAY level"
+  # vars_files:
+  #   - custom.yaml
+  # vars_prompt:
+  #   - name: NAME
+  #     prompt: "Please enter user name"
+  #     private: false
   
   tasks:
   - name: print precedence value
     ansible.builtin.debug:
       msg: "{{ NAME }}"
-    vars:
-      NAME: "I am from TASK level"
+    # vars:
+    #   NAME: "I am from TASK level"
 
 # precedence order top to bottom:
 
