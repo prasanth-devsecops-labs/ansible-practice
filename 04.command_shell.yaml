@@ -1,0 +1,32 @@
+- name: command and shell checks
+  hosts: local
+  connection: local
+  # become: yes
+
+  tasks:
+    - name: command example
+      ansible.builtin.command: date # more secure no pipe and >(redirections) works here
+      register: date_output
+      changed_when: false
+    
+    - name: print command output from register variable
+      ansible.builtin.debug:
+        msg: "{{ date_output.stdout }}"
+
+    - name: shell example
+      ansible.builtin.shell: uptime # less secure all shell environment cab be accessible 
+      register: uptime_test
+      changed_when: false
+    
+    - name: print shell example outcome
+      ansible.builtin.debug:
+        msg: "{{ uptime_test.stdout }}"
+    
+
+    - name: shell example
+      ansible.builtin.shell: ls -ltr 2>&1 | tee -a /tmp/files.txt
+      register: pipe_test
+    
+    - name: print shell example outcome
+      ansible.builtin.debug:
+        msg: "{{ pipe_test.stdout }}"

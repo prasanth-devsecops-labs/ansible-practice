@@ -1,0 +1,21 @@
+- name: loops checks
+  hosts: local
+  connection: local
+  become: yes
+
+  tasks:
+    - name: loop with list
+      ansible.builtin.debug:
+        msg: "{{ item }}" # item is keyword from ansible
+      loop:   # list of strings
+        - ornage  # string
+        - banana
+        - mango
+        - carrot
+  
+    - name: loop with map
+      ansible.builtin.debug:
+        msg: "{{ item.name }} is from {{ item.location }}"
+      loop: # list of map
+        - { name: Prashant, location: Hyd } # map/dictionary, key:value
+        - { name: Siri, location: Delhi }

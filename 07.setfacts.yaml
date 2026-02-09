@@ -1,0 +1,12 @@
+- name: set fact check
+  hosts: local
+  connection: local
+
+  tasks:
+    - name: custom variable
+      ansible.builtin.set_fact:
+        is_weekend: "{{ 'Saturday' in ansible_date_time.weekday or 'Sunday' in ansible_date_time.weekday }}"
+    
+    - name: use custom variable
+      ansible.builtin.debug:
+        msg: "is it the weekend?? {{ is_weekend }}"

@@ -1,0 +1,17 @@
+- name: conditions ansible
+  hosts: localhost
+  connection: local
+  vars:
+    NAME: Prashant
+    VALUE: 8
+  tasks:
+    - name: conditions in ansible
+      ansible.builtin.debug:
+        msg: "{{ NAME }}"
+      when: NAME == "Prashant"
+
+    - name: conditions in ansible
+      ansible.builtin.debug:
+        msg: "{{ VALUE }}"
+      when: VALUE > 7
+

@@ -1,0 +1,41 @@
+- name: filter example
+  hosts: local
+  connection: local
+
+  vars:
+    topics: linux, shell, ansible, github
+    tagMap:
+      name: ansible
+      project: roboshop
+      component: cart
+    tagList: [
+        {
+            "key": "name",
+            "value": "ansible"
+        },
+        {
+            "key": "project",
+            "value": "roboshop"
+        },
+        {
+            "key": "component",
+            "value": "cart"
+        }
+    ]
+  
+  tasks:
+    - name: greeting
+      ansible.builtin.debug:
+        msg: "Hi Siri, {{ GREETING | default('Good Morning') }}"
+    
+    - name: spilt string into list
+      ansible.builtin.debug:
+        msg: "{{ topics | split(',')}}"
+    
+    - name: convert map to list
+      ansible.builtin.debug:
+        msg: "{{ tagMap | dict2items }}"
+    
+    - name: convert list to map
+      ansible.builtin.debug:
+        msg: "{{ tagList | items2dict }}"

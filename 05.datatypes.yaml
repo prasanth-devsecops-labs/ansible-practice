@@ -1,0 +1,25 @@
+- name: data types check
+  hosts: local
+  connection: local
+  gather_facts: no
+  become: yes
+  vars:
+    PROGRAM: "DevOps with AWS"
+    DURATION: 140
+    IS_LIVE: true
+    DETAILS:
+      MONTHS: 4
+      TRAINER: "Siva"
+    TOPICS:
+    - Linux
+    - shell
+    - ansible
+  tasks:
+  - name: print datatypes
+    ansible.builtin.debug:
+      msg: |
+        Program: {{ PROGRAM }}
+        Duration: {{ DURATION }}
+        Is live: {{ IS_LIVE }}
+        Details: {{ DETAILS }}
+        Topics: {{ TOPICS }}
